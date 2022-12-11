@@ -1,5 +1,5 @@
 import {default as View} from './_students/View';
 
-export {
+export default {
     View
 }

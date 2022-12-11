@@ -1,0 +1,45 @@
+@background: #2C3E50;
+@color-unaccented: #E9EBEC;
+@color-selected: #273748;
+@color-hover: #3E5266;
+
+
+.component-page__Navbar {
+  background: @background;
+  width: 200px;
+  padding: 6px;
+
+  &_logo {
+    margin-bottom: 8px;
+
+    &__title {
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+  &_pages {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      height: 40px;
+      font-size: 16px;
+      color: @color-unaccented;
+      padding: 4px 6px;
+      border-radius: 8px;
+
+      display: flex;
+      align-items: center;
+
+      &-active {
+        background: @color-selected;
+        color: white;
+      }
+
+      &:hover {
+        background: @color-hover;
+      }
+    }
+  }
+}

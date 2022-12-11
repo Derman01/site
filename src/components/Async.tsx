@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
 interface Template {
     library: string;
@@ -6,31 +6,32 @@ interface Template {
 }
 
 interface IAsync {
-    template: Template
+    template: Template;
+    className?: string;
 }
 
-export default class Async extends React.Component<IAsync> {
-    state = {Component: <div>Loading</div>}
+const Loading = () => {
+    return (
+        <div>Loading...</div>
+    );
+}
 
-    componentWillMount() {
-        const {template} = this.props;
-        import('pages/students').then((library) => {
-            this.setState({
-                Component: library.View({
-                    data: 'Данные'
-                })
-            });
+
+const Async: React.FC<IAsync> = ({template, className}) => {
+
+    const [component, setComponent] = useState(<Loading/>);
+
+    useEffect(() => {
+        import(`../${template.library}`).then((library) => {
+            const Component = library.default[template.component] as React.FC;
+            // @ts-ignore
+            setComponent(<Component className={className}/>);
         });
-        //
-        // import(`../${template.library}`).then((library) => {
-        //     this.setState({
-        //         Component: library[template.component]()
-        //     });
-        // });
-    }
+    }, []);
 
-    render() {
-        return this.state.Component
-    }
-
+    return (
+        component
+    )
 }
+
+export default Async;

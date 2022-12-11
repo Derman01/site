@@ -4,58 +4,30 @@ interface Name {
     middleName: string
 }
 
-interface Student {
+
+export interface Categories {
     id: string;
-    name: Name;
-    group: string;
-    pay: number;
-    allPay: number;
-    isPay: boolean;
+    name: string;
+    count?: number
 }
 
-
-export const students: Student[] = [{
+export const categories: Categories[] = [{
+    id: '01',
+    name: 'Все'
+}, {
     id: '1',
-    name: {
-        surname: 'Топычканов',
-        name: 'Денис',
-        middleName: 'Сергеевич'
-    },
-    group: 'A-01',
-    pay: 25000,
-    allPay: 25000,
-    isPay: true,
+    name: 'А-01',
+    count: 12,
 }, {
     id: '2',
-    name: {
-        surname: 'Топычканов',
-        name: 'Денис',
-        middleName: 'Сергеевич'
-    },
-    group: 'A-01',
-    pay: 25000,
-    allPay: 25000,
-    isPay: true,
+    name: 'А-02',
+    count: 10,
 }, {
     id: '3',
-    name: {
-        surname: 'Топычканов',
-        name: 'Денис',
-        middleName: 'Сергеевич'
-    },
-    group: 'A-01',
-    pay: 25000,
-    allPay: 25000,
-    isPay: true,
+    name: 'Б-01',
+    count: 14,
 }, {
     id: '4',
-    name: {
-        surname: 'Топычканов',
-        name: 'Денис',
-        middleName: 'Сергеевич'
-    },
-    group: 'A-01',
-    pay: 25000,
-    allPay: 25000,
-    isPay: true,
-}]
+    name: 'Б-02',
+    count: 12,
+}];
