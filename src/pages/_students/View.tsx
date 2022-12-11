@@ -70,7 +70,7 @@ const View: React.FC<IView> = (options: IView) => {
             setFilter({});
         } else {
             setFilter({
-                category: item.id
+                group: item.id
             });
         }
     }

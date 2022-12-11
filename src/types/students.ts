@@ -2,7 +2,7 @@ import Student    from 'models/Student';
 import { IState } from './Interface';
 
 export interface Filter {
-    category?: number;
+    group?: number;
 }
 
 export interface StudentState extends IState<Student> {
