@@ -17,7 +17,7 @@ export const getStudents = (filter?: Filter) => {
             const studentsData = await createServer('students', {
                 filter
             });
-            const students = studentsData.data.map((student: IStudent) => new Student(student));
+            const students = studentsData.data.items.map((student: IStudent) => new Student(student));
             dispatch({
                 type: StudentActionTypes.GET_SUCCESS,
                 payload: students
