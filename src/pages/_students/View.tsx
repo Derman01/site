@@ -43,7 +43,7 @@ const DetailItem: React.FC<IDetailItem> =
                     {item.ShortName}
                 </span>
                 <span className={'pages-students__View_detail__item_infoGroup'}>
-                    {item.group}
+                    {item.group_name}
                 </span>
             </div>
             <div className={'pages-students__View_detail__item_payment'}>
