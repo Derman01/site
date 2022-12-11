@@ -46,7 +46,7 @@ const View = (
 
     const getClassName = (item: TypeItem): string => {
         const classNames = ['component-list__View_item', 'component-list__View_item-' + style];
-        if (selectedKey === (item[keyProperty] || item.get(keyProperty)) && canSelected) {
+        if (selectedKey === item[keyProperty] && canSelected) {
             classNames.push('component-list__View_item-selected');
             if (markerVisible) {
                 classNames.push('component-list__View_item-marker')
@@ -62,7 +62,7 @@ const View = (
             {
                 source.length
                     ? source.map((item) =>
-                        <Item key={item[keyProperty] || item.get(keyProperty)}
+                        <Item key={item[keyProperty]}
                               item={item}
                               templateItem={templateItem}
                               className={getClassName(item)}
