@@ -5,7 +5,6 @@ import List                                    from 'components/list';
 import { useTypesSelector }                    from 'hooks/useTypedSelector';
 import { useActions }                          from 'hooks/useActions';
 import Student                                 from 'models/Student';
-import student                                 from 'models/Student';
 
 interface IView {
     className?: string;
@@ -67,11 +66,11 @@ const View: React.FC<IView> = (options: IView) => {
 
 
     const changeFolderHandler = (item: Categories) => {
-        if (item.id === '01') {
+        if (item.id === 0) {
             setFilter({});
         } else {
             setFilter({
-                category: item.name
+                category: item.id
             });
         }
     }
