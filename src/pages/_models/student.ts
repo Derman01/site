@@ -1,10 +1,4 @@
-interface Name {
-    surname: string;
-    name: string;
-    middleName: string;
-}
-
-export interface IStudent {
+interface IStudent {
     id: string;
     payment_needed?: 10000,
     group_id?: 1,
@@ -36,9 +30,6 @@ class Student implements IStudent {
 
     public get Payment() {
         return '';
-        // const pay = Math.round(this.pay / 1000);
-        // const allPay = Math.round(this.allPay / 1000);
-        // return `${pay}т/${allPay}т`;
     }
 
     public constructor(data: IStudent) {

@@ -3,6 +3,7 @@
 
 .pages-students__View {
   display: flex;
+  height: 100%;
 
   &_master {
     &__item {
@@ -26,6 +27,7 @@
       grid-template-columns: auto 1fr auto;
       gap: 8px;
       height: 40px;
+      position: relative;
 
       &_info {
         display: flex;
@@ -44,6 +46,18 @@
       &_payment {
         font-size: 10px;
         color: @color-payment;
+      }
+
+      &_options {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+      }
+
+      &:hover {
+        .pages-students__View_detail__item_options {
+          opacity: 1;
+        }
       }
     }
   }

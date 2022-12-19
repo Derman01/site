@@ -2,9 +2,24 @@
   height: 100%;
   display: flex;
   max-width: 1980px;
+}
+
+.component-page__Page {
+  width: 100%;
+  background: #F8F8F8;
+  display: grid;
+  grid-template-columns: 1fr auto;
 
   &__content {
-    width: 100%;
-    background: #F8F8F8;
+    position: relative;
   }
+
+  &__header {
+    height: 60px;
+  }
+
+  &__aside {
+    width: 60px;
+  }
+
 }

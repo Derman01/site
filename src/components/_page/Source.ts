@@ -6,7 +6,14 @@ export const Pages: ItemAccordion[] = [{
     template: {
         library: 'pages/students.ts',
         component: 'View'
-    }
+    },
+    buttons: [{
+        id: 'ADD_STUDENT',
+        name: 'Добавить студента'
+    }, {
+        id: 'ADD_GROUP',
+        name: 'Добавить группу'
+    }]
 }, {
     name: 'Документы',
     path: 'document'
